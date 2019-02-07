@@ -4,6 +4,8 @@ This is Terraform Example
 
 ## Requirement
 
+## Usage
+
 * Setting AWS Access Key & Secret Key
 ```
 export AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxxxx
@@ -48,8 +50,6 @@ terraform plan
 
 terraform apply
 ```
-
-## Usage
 
 ## Licence
 
