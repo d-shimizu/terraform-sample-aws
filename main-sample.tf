@@ -102,3 +102,8 @@ resource "aws_instance" "example" {
     Name = "tf-example-ec2"
   }
 }
+
+resource "aws_eip" "tf-example-eip" {
+    instance = "${aws_instance.example.id}"
+    vpc = true
+}
