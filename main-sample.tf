@@ -1,6 +1,6 @@
 provider "aws" {
-    region = "ap-northeast-1"
-    profile = "default"
+    region = "${var.region}"
+    profile = "${var.profile}"
 }
 
 # VPC
