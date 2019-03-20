@@ -44,11 +44,11 @@ cd terraform-sample
 
 * execution
 ```
-terraform init
+terraform init -var-file=sample.tfvars
 
-terraform plan
+terraform plan -var-file=sample.tfvars
 
-terraform apply
+terraform apply -var-file=sample.tfvars
 ```
 
 ## Licence
