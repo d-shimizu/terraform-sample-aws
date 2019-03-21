@@ -51,6 +51,11 @@ terraform plan -var-file=sample.tfvars
 terraform apply -var-file=sample.tfvars
 ```
 
+* Delete
+```
+terraform destroy
+```
+
 ## Licence
 
 ## Author
