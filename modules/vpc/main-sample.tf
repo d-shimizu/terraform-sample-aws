@@ -1,8 +1,3 @@
-provider "aws" {
-  region  = "${var.region}"
-  profile = "${var.profile}"
-}
-
 # VPC
 resource "aws_vpc" "terraform_example_vpc" {
   cidr_block           = "10.1.0.0/16"
@@ -74,45 +69,4 @@ resource "aws_route_table_association" "terraform_example_rt_public-a" {
 resource "aws_route_table_association" "terraform_example_rt_public-c" {
   subnet_id      = "${aws_subnet.terraform_example_subnet_public-c.id}"
   route_table_id = "${aws_route_table.terraform_example_public_rt.id}"
-}
-
-# Security Group
-resource "aws_security_group" "terraform_example_sg" {
-  name   = "APP_SG"
-  vpc_id = "${aws_vpc.terraform_example_vpc.id}"
-
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  description = "tf-example-sg"
-}
-
-# EC2
-resource "aws_instance" "terraform_example_ec2" {
-  ami                     = "ami-2a69be4c"
-  instance_type           = "t2.micro"
-  disable_api_termination = false
-  key_name                = "aws-key-pair"
-  vpc_security_group_ids  = ["${aws_security_group.terraform_example_sg.id}"]
-  subnet_id               = "${aws_subnet.terraform_example_subnet_public-a.id}"
-
-  tags {
-    Name = "tf-example-ec2"
-  }
-}
-
-resource "aws_eip" "terraform_example_eip" {
-  instance = "${aws_instance.terraform_example_ec2.id}"
-  vpc      = true
 }
