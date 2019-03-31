@@ -1,11 +1,11 @@
-variable "tf_vpc_id" {}
-variable "terraform_example_subnet_public-a" {}
-variable "terraform_example_subnet_public-c" {}
+variable "tf_sample_vpc_id" {}
+variable "tf_sample_public-a_subnet_id" {}
+variable "tf_sample_public-c_subnet_id" {}
 
 # Security Group
 resource "aws_security_group" "terraform_example_sg" {
   name   = "tf_app_sg"
-  vpc_id = "${var.tf_vpc_id}"
+  vpc_id = "${var.tf_sample_vpc_id}"
 
   ingress {
     from_port   = 22
@@ -31,7 +31,7 @@ resource "aws_instance" "terraform_example_ec2" {
   disable_api_termination = false
   key_name                = "aws-key-pair"
   vpc_security_group_ids  = ["${aws_security_group.terraform_example_sg.id}"]
-  subnet_id               = "${var.terraform_example_subnet_public-a}"
+  subnet_id               = "${var.tf_sample_public-a_subnet_id}"
 
   tags {
     Name = "tf-example-ec2"

@@ -1,11 +1,11 @@
-output "terraform_example_vpc_id" {
-  value = "${aws_vpc.terraform_example_vpc.id}"
+output "tf_sample_vpc_id" {
+  value = "${aws_vpc.tf_sample_vpc.id}"
 }
 
-output "terraform_example_subnet_public-a_id" {
-  value = "${aws_subnet.terraform_example_subnet_public-a.id}"
+output "tf_sample_public-a_subnet_id" {
+  value = "${aws_subnet.tf_sample_public-a_subnet.id}"
 }
 
-output "terraform_example_subnet_public-c_id" {
-  value = "${aws_subnet.terraform_example_subnet_public-c.id}"
+output "tf_sample_public-c_subnet_id" {
+  value = "${aws_subnet.tf_sample_public-c_subnet.id}"
 }
