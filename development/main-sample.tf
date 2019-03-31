@@ -10,7 +10,8 @@ module "vpc" {
 
 module "ec2" {
   source = "../modules/ec2"
-  tf_vpc_id = "${module.vpc.terraform_example_vpc_id}"
-  terraform_example_subnet_public-a = "${module.vpc.terraform_example_subnet_public-a_id}"
-  terraform_example_subnet_public-c = "${module.vpc.terraform_example_subnet_public-c_id}"
+
+  tf_sample_vpc_id = "${module.vpc.tf_sample_vpc_id}"
+  tf_sample_public-a_subnet_id = "${module.vpc.tf_sample_public-a_subnet_id}"
+  tf_sample_public-c_subnet_id = "${module.vpc.tf_sample_public-c_subnet_id}"
 }
