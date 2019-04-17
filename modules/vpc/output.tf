@@ -1,11 +1,11 @@
-output "tf_sample_vpc_id" {
-  value = "${aws_vpc.tf_sample_vpc.id}"
+output "vpc_id" {
+  value = "${aws_vpc.this.id}"
 }
 
-output "tf_sample_public-a_subnet_id" {
-  value = "${aws_subnet.tf_sample_public-a_subnet.id}"
+output "subnet_public_a_id" {
+  value = "${aws_subnet.public_a.id}"
 }
 
-output "tf_sample_public-c_subnet_id" {
-  value = "${aws_subnet.tf_sample_public-c_subnet.id}"
+output "subnet_public_c_id" {
+  value = "${aws_subnet.public_c.id}"
 }
