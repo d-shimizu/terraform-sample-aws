@@ -4,14 +4,14 @@ provider "aws" {
 }
 
 # VPC
-module "vpc" {
+module "module_vpc" {
   source = "../modules/vpc"
 }
 
-module "ec2" {
+module "module_ec2" {
   source = "../modules/ec2"
 
-  tf_sample_vpc_id = "${module.vpc.tf_sample_vpc_id}"
-  tf_sample_public-a_subnet_id = "${module.vpc.tf_sample_public-a_subnet_id}"
-  tf_sample_public-c_subnet_id = "${module.vpc.tf_sample_public-c_subnet_id}"
+  vpc_id = "${module.module_vpc.vpc_id}"
+  subnet_public_a_id = "${module.module_vpc.subnet_public_a_id}"
+  subnet_public_c_id = "${module.module_vpc.subnet_public_c_id}"
 }
