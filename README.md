@@ -39,7 +39,7 @@ cd ~
 
 git clone https://github.com/daisukeshimizu/terraform-sample.git
 
-cd terraform-sample
+cd terraform-sample/development
 ```
 
 * execution
