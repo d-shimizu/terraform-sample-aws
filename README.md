@@ -44,11 +44,11 @@ cd terraform-sample/development
 
 * execution
 ```
-terraform init -var-file=sample.tfvars
+terraform init -var-file=config.tfvars
 
-terraform plan -var-file=sample.tfvars
+terraform plan -var-file=config.tfvars
 
-terraform apply -var-file=sample.tfvars
+terraform apply -var-file=config.tfvars
 ```
 
 * Delete
